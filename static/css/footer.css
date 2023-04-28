@@ -1,0 +1,14 @@
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    text-align: center;
+    min-height: 50px;
+    padding: 3px;
+    background-color: #252525;
+    color: white;
+    margin-top: auto;
+}

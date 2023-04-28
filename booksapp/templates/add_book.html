@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+
+
+{% load static %}
+
+    {% block title %}
+        <title>Biblioteka | Dodawanie książki</title>
+    {% endblock %}
+
+
+{% block content %}
+<center>
+<h1>Dodaj Książkę</h1>
+<br></br>
+{% if submitted %}
+    Udało się dodać książkę do bazy biblioteki!
+{% else %}
+<form enctype='multipart/form-data' action="" method=POST>
+{% csrf_token %}
+<table>
+<tr>{{form.title}}</tr>
+<tr>{{form.author}}</tr>
+<tr>{{form.description}}</tr>
+<tr>{{form.category}}</tr>
+<tr><strong>Okładka:</strong>{{form.cover_image}}</tr><br><br>
+<tr><strong>Plik PDF:</strong>{{form.pdf}}</tr><br><br>
+</table>
+<input type = 'submit' id = 'submitButton'><br><br>
+
+</form>
+{% endif %}
+</center>
+{% endblock %}

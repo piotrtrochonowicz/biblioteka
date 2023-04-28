@@ -1,0 +1,29 @@
+#imgContainer {
+    padding: 3px 3px 3px 3px;
+    margin: 0px 10px 20px 10px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    background-color: #252525;
+    float: left;
+}
+
+img {
+    width: 350px;
+    height: 500px;
+    border-radius: 20px;
+    float: left;
+}
+
+#downloadbtn {
+    border-radius: 5px;
+    background-color: #00ff99;
+    padding: 15px 32px;
+
+}
+
+#downloadbtn:hover {
+    background-color: white;
+    color: black;
+    border: 2px solid #00ff99;
+    cursor: pointer;
+}

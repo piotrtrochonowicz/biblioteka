@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block title %}
+<title>Biblioteka | Zbiór Książek</title>
+{% endblock %}
+
+
+
+{% block content %}
+
+<center>
+  <p uk-margin style= "width: 80%; margin: auto; margin-top: 20px;">
+    {% for category in categories  %}
+      <a href="{% url 'category_details' category.slug %}"><button id="categoriesBtn"><strong>{{category.name}}</strong></button></a>
+    {% endfor %}
+  </p>
+</center>
+
+  <div class = 'container'>
+    <div class = 'row'><h3>Wszystkie dostępne Książki</h3></div>
+    <div class = 'row'>
+      {% for book in books %}
+      {% if book.approved %}
+      <div class = 'col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2'>
+        <a href = "{% url 'book_details' book.slug %}">
+          <div>
+            <div class="uk-card uk-card-default uk-card-body"> 
+                <img src = "{{book.cover_image.url}}">
+               
+            </div>
+        </div>
+      </a>
+      </div>
+      {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+
+
+{% endblock %}

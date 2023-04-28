@@ -1,0 +1,33 @@
+
+<div class="topnav">
+    <a class="active" href="{% url 'home' %}">Strona Główna</a>
+    <a href="{% url 'all_books' %}">Biblioteka</a>
+    <a href="{% url 'about' %}">O nas</a>
+
+    {% if user.is_authenticated %}
+    
+    <div class="dropdown">
+      <button class="dropbtn">Cześć {{ user.username }} 🠻</button>
+      <div class="dropdown-content">
+        <a href="{% url 'add_book' %}">Dodaj Książkę</a>
+        <a href="{% url 'update_user_profile' %}">Profil</a>
+        <a href="{% url 'logout' %}">Wyloguj</a>
+      </div>
+    </div>
+   
+   {% else %}
+
+   <a class="signup_button" href="{% url 'signup' %}">Rejestracja</a>
+   <a class="login_button" href="{% url 'login' %}">Logowanie</a>
+       
+ {% endif %}
+
+
+<div class="search-container">
+  <form class="d-flex" method='POST' action = "{% url 'search_book' %}">
+    {% csrf_token %}
+    {{search_form.book_name}}
+    <button type="submit">Szukaj</button>
+  </form>
+  </div>
+</div>

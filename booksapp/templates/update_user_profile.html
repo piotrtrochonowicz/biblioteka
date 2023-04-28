@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Biblioteka | Profil Użytkownika</title>
+{% endblock %}
+
+
+{% block content %}
+
+<div class = 'header'>
+    <h2>Profil użytkownika: {{ user.username }}</h2>
+    <h2 class="change_h2">W okienu poniżej możesz zaktualizować informacje na temat swojego profilu i zmienić hasło</h2>
+    
+</div>
+
+
+<div class = 'holder'>
+
+    <form action = '#' method = 'POST'>
+      {% csrf_token %}
+      <div id = 'form-control' class="change">
+          <label class = labelz>Nazwa Użytkownika:</label>
+          {{signup_form.username}}
+        </div>
+
+        <div id = 'form-control' class="change">
+          <label class = labelz>Email:</label>
+          {{signup_form.email}}
+        </div>
+  
+      <div id = 'form-control' class="change">
+          <label class = labelz>Hasło:</label>
+          {{signup_form.password1}}
+        </div>
+  
+       <div id = 'form-control' class="change">
+          <label class = labelz>Powtórz Hasło:</label>
+          {{signup_form.password2}}
+        </div>
+      
+        {{signup_form.errors}}
+
+      <button type = 'submit' id = 'submitButton'>Aktualizuj</button>
+
+    </form>
+  </div>
+  {% endblock %}

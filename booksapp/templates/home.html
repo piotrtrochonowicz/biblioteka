@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+
+
+{% block title %}
+  <title>Biblioteka | Strona Główna</title>
+{% endblock title %}
+
+
+
+{% block content %}
+
+
+  <div class = 'container'>
+      <div class = 'row'><h3>Polecane Książki</h3></div>
+      <div class = 'row'>
+        {% for book in recommended_books %}
+        {% if book.approved %}
+        <div class = 'col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2'>
+          <a href = "{% url 'book_details' book.slug %}">
+            <div>
+              <div class="uk-card uk-card-default uk-card-body"> 
+                  <img src = "{{book.cover_image.url}}">
+                
+              </div>
+          </div>
+        </a>
+        </div>
+        {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+    
+    
+    <div class = 'container'>
+      <div class = 'row'><h3>Bestselery</h3></div>
+      <div class = 'row'>
+        {% for book in best_sellers %}
+        {% if book.approved %}
+        <div class = 'col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2'>
+          <a href = "{% url 'book_details' book.slug %}">
+            <div>
+              <div class="uk-card uk-card-default uk-card-body"> 
+                <img src = "{{book.cover_image.url}}">
+              </div>
+          </div>
+        </a>
+        </div>
+        {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+    
+    
+    <div class = 'container'>
+        <div class = 'row'><h3>Docenione przez krytyków</h3></div>
+        <div class = 'row'>
+            {% for book in liked_by_critics %}
+            {% if book.approved %}
+          <div class = 'col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2'>
+            <a href = "{% url 'book_details' book.slug %}">
+              <div>
+                <div class="uk-card uk-card-default uk-card-body"> 
+                  <img src = "{{book.cover_image.url}}">
+                </div>
+            </div>
+          </a>
+          </div>
+          {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+
+
+{% endblock content %}
+  

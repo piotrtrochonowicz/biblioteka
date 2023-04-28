@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Biblioteka | Logowanie</title>
+{% endblock %}
+
+
+{% block content %}
+
+
+<div class = 'header'>
+    {% for message in messages %}
+    <p class  = 'successMsg'>{{message}}</p>
+    {% endfor%}
+    <h2 class="change_h2">Zaloguj się, żeby korzystać z usług biblioteki online</h2>
+</div>
+
+<div class = 'holder'>
+
+    <form action = '#' method = 'POST'>
+      {% csrf_token %}
+      <div id = 'form-control' class="change">
+        <label class = labelz>Nazwa użytkownika:</label>
+        <input name="username" id='username' class = 'form-input' placeholder = 'Podaj nazwę użytkownika'>
+      </div>
+  
+     
+  
+      <div id = 'form-control' class="change">
+        <label class = labelz>Hasło:</label>
+        <input type="password" name="password1" class = 'form-input' placeholder="Podaj hasło (minimum 8 znaków)" maxlength="100" required="" id="id_password1">
+      </div>
+
+
+      <button type = 'submit' id = 'submitButton'>Zaloguj się</button>
+
+      <div id = 'haveAnAccount'>
+        <p>Nie posiadasz konta użytkownika?</p>
+        <a class="change_a" href = "{% url 'signup' %}"><strong>Zarejestruj się</strong></a>
+      </div>
+
+    </form>
+    
+  </div>
+  
+   {% endblock %}

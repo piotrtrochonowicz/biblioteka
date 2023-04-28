@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+{% block htmlhead %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    {% block title %}
+    <title>Biblioteka</title>
+    {% endblock %}
+    
+<!-- HEADER -->
+{% include 'snippets/header.html' %}
+<!-- END HEADER -->
+
+<link rel = 'stylesheet' href ="{% static 'css/home.css' %}">
+<link rel = 'stylesheet' href ="{% static 'css/book_details.css' %}">
+<link rel = 'stylesheet' href ="{% static 'css/signup.css' %}">
+<link rel = 'stylesheet' href ="{% static 'css/header.css' %}">
+<link rel = 'stylesheet' href ="{% static 'css/footer.css' %}">
+<link rel = 'stylesheet' href ="{% static 'css/add_book.css' %}">
+
+{% endblock htmlhead %}
+</head>
+<body>
+
+ 
+
+
+
+{% block content %}
+
+
+{% endblock %}
+
+
+<!-- FOOTER -->
+{% include 'snippets/footer.html' %}
+<!-- END FOOTER -->
+</body>
+</html> 

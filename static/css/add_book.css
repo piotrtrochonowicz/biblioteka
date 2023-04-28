@@ -1,0 +1,65 @@
+.form-control-cover_image {
+    background-color: #4CAF50;
+    border-radius: 5px;
+    padding: 15px 32px;
+}
+
+
+.form-control-cover_image {
+    padding: 15px 32px;
+    border-radius: 10px;
+    margin-left: 5px;
+    color: white;
+    background-color: #252525;
+}
+
+.form-control-pdf {
+    padding: 15px 32px;
+    margin-left: 5px;
+    border-radius: 10px;
+    color: white;
+    background-color: #252525;
+}
+
+.form-input {
+    margin: 10px auto;
+    display: flex;
+    text-align: center;
+    min-width: 0;
+    border-radius: 10px;
+    width: 300px;
+    height: 50px;
+    background-color: #252525;
+    color: white;
+}
+
+.form-input-desc {
+    margin: 10px auto;
+    display: flex;
+    text-align: center;
+    min-width: 0;
+    border-radius: 10px;
+    width: 400px;
+    height: 300px;
+    background-color: #252525;
+    color: white;
+}
+
+.form-input-category {
+    width: 400px;
+    accent-color: #4CAF50;
+    background-color: #252525;
+    color: white;
+    border-radius: 10px;
+    margin: 10px auto;
+}
+
+::placeholder {
+    color: white;
+    opacity: 1;
+}
+
+label {
+    color: white;
+
+}
